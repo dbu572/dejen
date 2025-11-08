@@ -1,30 +1,27 @@
-"""
-Santa Floors — Part One
-
-Given a string of parentheses:
-- '(' means go up one floor (+1)
-- ')' means go down one floor (-1)
-
-Calculate the final floor number Santa ends up on.
-"""
-
-
 def move_floor(char: str) -> int:
     """
     Returns +1 if '(' else -1 if ')'.
     """
-    pass
+    if char == '(':
+        return 1
+    elif char == ')':
+        return -1
+    else:
+        print ("ValueErrorInvalid character: only '(' and ')' are allowed.")
 
 
 def final_floor(instructions: str) -> int:
     """
     Calculates the final floor Santa ends on.
     """
-    pass
-
+    floor = 0
+    for ch in instructions:
+        floor += move_floor(ch)
+    return floor
 
 # --- Main Program ---
+floor=""
 if __name__ == "__main__":
-    instructions = input("Enter Santa's instructions (e.g. (()()) ): ").strip()
+    instructions = str(input("Enter Santa's instructions (e.g. (()()) ): ")).strip()
     floor = final_floor(instructions)
     print("Santa ends up on floor:", floor)
