@@ -21,8 +21,7 @@ def first_basement_position(instructions: str) -> int:
         floor += move_floor(i)
         if floor == -1:
             return floor  # First time reaching the basement
-    
-
+    return floor
 
 # --- Main Program ---
 position=0
