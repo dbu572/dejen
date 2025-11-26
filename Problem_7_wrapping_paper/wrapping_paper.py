@@ -21,14 +21,16 @@ def surface_area(l: int, w: int, h: int) -> int:
     """
     Returns the surface area
     """
-    pass
+    surfacearea=2*l*w+2*w*h+2*h*l
+    return surfacearea
 
 
 def smallest_side_area(l: int, w: int, h: int) -> int:
     """
     Returns the area of the smallest side.
     """
-    pass
+    smallest=min(l*w,w*h,h*l)
+    return smallest
 
 
 
@@ -36,7 +38,7 @@ def paper_for_box(l: int, w: int, h: int) -> int:
     """
     Returns total wrapping paper for one box.
     """
-    pass
+    return surface_area(l,w,h) + smallest_side_area(l,w,h)
 
 
 def total_paper_needed(boxes: str) -> int:
